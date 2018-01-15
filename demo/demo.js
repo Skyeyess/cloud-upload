@@ -567,6 +567,7 @@ function uploadFiles() {
     const timePath = Date.now();
     const uploadArr = fs.readdirSync('upload');
     if (uploadArr.length) {
+        console.log(`[upload-time]: The upload timestamp is ${timePath}.`)
         uploadArr.forEach(fileName => {
             putObject(`${timePath}/${fileName}`, path.join('upload', fileName));
         });
